@@ -22,7 +22,6 @@
   }
 
   body {
-    min-height: 100vh;
     background: var(--color-background);
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -32,7 +31,7 @@
 
 @layer components {
   .btn {
-    @apply px-2 py-2 rounded-lg border;
+    @apply px-2 py-2 rounded-lg border cursor-pointer;
     @apply flex items-center justify-center;
     @apply bg-white text-gray-900 hover:bg-gray-50;
   }
@@ -43,5 +42,24 @@
 
   .btn-ghost {
     @apply btn border-0;
+  }
+
+  .btn-menu {
+    @apply px-4 py-2 rounded-md;
+    @apply bg-gray-100 text-slate-900 font-medium hover:bg-gray-200;
+  }
+
+  ul.sidebar-menu {
+    @apply flex flex-col gap-y-2;
+  }
+
+  svg {
+    @apply text-gray-500;
+  }
+
+  ul.sidebar-menu > li {
+    @apply flex items-center justify-between gap-3 w-full;
+    @apply btn-menu font-semibold whitespace-nowrap;
+    @apply w-full;
   }
 }

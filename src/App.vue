@@ -9,6 +9,7 @@ export default {
 </script>
 
 <template>
+  <!-- Header bar -->
   <header class="px-10 py-4 border-b flex justify-between items-center">
     <div class="inline-flex gap-6 items-center">
       <button class="btn-square">
@@ -32,9 +33,26 @@ export default {
       </button>
     </div>
   </header>
-  <main>
+
+  <!-- Page main body -->
+  <div id="content" class="flex-1 overflow-auto highlight">
     <router-view></router-view>
-  </main>
+  </div>
 </template>
 
-<style scoped></style>
+<style>
+#app {
+  /* Set the height to 100% of the viewport height */
+  height: 100dvh;
+  /* Use flexbox to create a column layout */
+  display: flex;
+  flex-direction: column;
+}
+
+#content {
+  /* Make the content stretch and take all available space */
+  flex: 1;
+  /* Allow scrolling within the content if necessary */
+  overflow: auto;
+}
+</style>
