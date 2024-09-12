@@ -10,6 +10,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@marsio/vue-draggable": "^1.0.9",
     "feather-icons": "^4.29.2",
     "pinia": "^2.0.32",
     "vue": "^3.2.47",

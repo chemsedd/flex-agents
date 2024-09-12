@@ -35,7 +35,7 @@ export default {
   </header>
 
   <!-- Page main body -->
-  <div id="content" class="flex-1 overflow-auto highlight">
+  <div id="content" class="flex-1 overflow-hidden">
     <router-view></router-view>
   </div>
 </template>

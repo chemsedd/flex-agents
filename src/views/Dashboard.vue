@@ -1,7 +1,9 @@
 <script>
 import feather from 'feather-icons'
+import Board from '@/components/Board.vue'
 
 export default {
+  components: { Board },
   data() {
     return {
       sidebarItems: [
@@ -156,13 +158,14 @@ export default {
           </button>
         </div>
       </div>
+      <Board />
     </main>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .dashboard-container {
-  @apply flex flex-1 overflow-clip;
+  @apply flex flex-1 h-full overflow-clip;
 }
 
 .inline-container {
@@ -177,7 +180,7 @@ export default {
 // Sidebar
 
 .sidebar {
-  @apply flex flex-col overflow-clip border-r;
+  @apply flex flex-col overflow-clip border-r text-gray-700;
 
   & svg {
     @apply text-gray-500 h-5 w-5;
