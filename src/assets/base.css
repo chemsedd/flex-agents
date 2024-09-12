@@ -26,18 +26,19 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
   }
 }
 
 @layer components {
   .btn {
-    @apply px-2 py-2 rounded-lg border cursor-pointer;
-    @apply flex items-center justify-center;
+    @apply px-3 py-2 rounded-lg border cursor-pointer;
+    @apply flex items-center justify-center gap-2;
     @apply bg-white text-gray-900 hover:bg-gray-50;
   }
 
   .btn-square {
-    @apply btn w-12 h-12;
+    @apply btn w-10 h-10 p-2;
   }
 
   .btn-ghost {
@@ -47,19 +48,5 @@
   .btn-menu {
     @apply px-4 py-2 rounded-md;
     @apply bg-gray-100 text-slate-900 font-medium hover:bg-gray-200;
-  }
-
-  ul.sidebar-menu {
-    @apply flex flex-col gap-y-2;
-  }
-
-  svg {
-    @apply text-gray-500;
-  }
-
-  ul.sidebar-menu > li {
-    @apply flex items-center justify-between gap-3 w-full;
-    @apply btn-menu font-semibold whitespace-nowrap;
-    @apply w-full;
   }
 }

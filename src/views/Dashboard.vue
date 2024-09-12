@@ -102,21 +102,64 @@ export default {
 
 <template>
   <!-- Dashboard content -->
-  <div class="flex flex-1 overflow-clip">
-    <div class="p-2 overflow-clip">
-      <ul class="sidebar-menu overflow-y-scroll">
+  <div class="dashboard-container">
+    <div class="sidebar">
+      <!-- Library search -->
+      <div class="sidebar-header">
+        <button class="btn-ghost">
+          <i data-feather="search"></i>
+          <span>Library</span>
+        </button>
+        <div class="inline-flex gap-2">
+          <i data-feather="chevron-down"></i>
+          <i data-feather="minimize"></i>
+        </div>
+      </div>
+      <!-- Library items -->
+      <ul class="sidebar-menu">
         <li v-for="item in sidebarItems" :key="item.label">
           <div class="inline-flex items-center gap-3">
             <i :data-feather="item.icon"></i>
             <span> {{ item.label }}</span>
           </div>
 
-          <div v-if="item.subitems">
-            <i data-feather="chevron-down"></i>
-          </div>
+          <i v-if="item.subitems" data-feather="chevron-down"></i>
         </li>
       </ul>
     </div>
-    <main class="flex-1 flex items-center justify-center">BOARD HERE</main>
+    <!-- Board -->
+    <main class="board">BOARD HERE</main>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.dashboard-container {
+  @apply flex flex-1 overflow-clip;
+}
+
+.sidebar {
+  @apply p-2 flex flex-col overflow-clip border-r;
+
+  & svg {
+    @apply text-gray-500 h-5 w-5;
+  }
+}
+
+div.sidebar-header {
+  @apply py-2 inline-flex gap-2 items-center justify-between text-sm;
+}
+
+ul.sidebar-menu {
+  @apply flex flex-col gap-y-2 overflow-scroll;
+
+  & > li {
+    @apply flex items-center justify-between gap-6 w-full;
+    @apply btn-menu font-semibold whitespace-nowrap;
+    @apply w-full;
+  }
+}
+
+.board {
+  @apply flex-1 flex items-center justify-center;
+}
+</style>
