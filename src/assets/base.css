@@ -41,6 +41,10 @@
     @apply btn w-10 h-10 p-2;
   }
 
+  .btn-circle {
+    @apply btn w-8 h-8 p-2 rounded-full;
+  }
+
   .btn-ghost {
     @apply btn border-0;
   }
