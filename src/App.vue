@@ -1,7 +1,9 @@
 <script>
 import feather from 'feather-icons'
+import Dashboard from './views/Dashboard.vue'
 
 export default {
+  components: { Dashboard },
   mounted() {
     feather.replace()
   }
@@ -36,7 +38,7 @@ export default {
 
   <!-- Page main body -->
   <div id="content" class="flex-1 overflow-hidden">
-    <router-view></router-view>
+    <Dashboard />
   </div>
 </template>
 
