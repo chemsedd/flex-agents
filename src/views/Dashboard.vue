@@ -58,46 +58,21 @@ export default {
 }
 
 .inline-container {
-  @apply inline-flex gap-2 items-center justify-between text-sm font-medium;
-  @apply py-2 px-4 h-16;
+  @apply flex gap-2 items-center justify-between text-sm font-medium;
+  @apply py-2 px-4;
 
   & svg {
     @apply h-4 w-4 text-gray-500;
   }
 }
 
-// Sidebar
-
-.sidebar {
-  @apply flex flex-col overflow-clip border-r text-gray-700;
-
-  & svg {
-    @apply text-gray-500 h-5 w-5;
-  }
-}
-
-div.sidebar-header {
-  @apply inline-container border-b;
-}
-
-ul.sidebar-menu {
-  @apply flex flex-col gap-y-2 overflow-scroll;
-  @apply px-2 py-2;
-
-  & > li {
-    @apply flex items-center justify-between gap-6 w-full;
-    @apply btn-menu font-semibold whitespace-nowrap;
-    @apply w-full;
-  }
-}
-
 // Board
 
 .board {
-  @apply flex-1 flex flex-col;
+  @apply flex-1 flex flex-col overflow-scroll;
 }
 
 .board-header {
-  @apply inline-container px-6 border-b;
+  @apply inline-container px-6 border-b overflow-x-scroll;
 }
 </style>

@@ -34,7 +34,7 @@
   /* Buttons */
 
   .btn {
-    @apply px-3 py-2 rounded-lg border cursor-pointer;
+    @apply px-3 py-2 rounded-lg border cursor-pointer whitespace-nowrap;
     @apply flex items-center justify-center gap-2;
     @apply bg-white text-gray-900 hover:bg-gray-50;
   }
