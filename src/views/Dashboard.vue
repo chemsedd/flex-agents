@@ -1,100 +1,12 @@
 <script>
 import feather from 'feather-icons'
+import Sidebar from '@/components/Sidebar.vue'
 import Board from '@/components/Board.vue'
 
 export default {
-  components: { Board },
-  data() {
-    return {
-      sidebarItems: [
-        {
-          icon: 'corner-down-right',
-          label: 'Start node'
-        },
-        {
-          icon: 'corner-down-right',
-          label: 'Agents',
-          subitems: [{ label: 'Item 1' }]
-        },
-        {
-          icon: 'link',
-          label: 'Chains',
-          subitems: [{ label: 'Item 1' }]
-        },
-        {
-          icon: 'loader',
-          label: 'Loaders',
-
-          subitems: [
-            {
-              label: 'CSV Loader'
-            },
-            {
-              label: 'File loader'
-            }
-          ]
-        },
-        {
-          icon: 'database',
-          label: 'Embeddings',
-          subitems: [{ label: 'Item 1' }]
-        },
-        {
-          icon: 'code',
-          label: "LLM's",
-          subitems: [{ label: 'Item 1' }]
-        },
-        {
-          icon: 'code',
-          label: 'Memories',
-          subitems: [{ label: 'Item 1' }]
-        },
-        {
-          icon: 'code',
-          label: 'Output Parsers',
-          subitems: [{ label: 'Item 1' }]
-        },
-        {
-          icon: 'message-circle',
-          label: 'Prompts',
-          subitems: [{ label: 'Item 1' }]
-        },
-        {
-          icon: 'code',
-          label: 'Toolkits',
-          subitems: [{ label: 'Item 1' }]
-        },
-        {
-          icon: 'tool',
-          label: 'Tools',
-          subitems: [{ label: 'Item 1' }]
-        },
-        {
-          icon: 'activity',
-          label: 'Utilities',
-          subitems: [{ label: 'Item 1' }]
-        },
-        {
-          icon: 'layers',
-          label: 'Vector stores',
-          subitems: [{ label: 'Item 1' }]
-        },
-        {
-          icon: 'code',
-          label: 'Wrappers',
-          subitems: [{ label: 'Item 1' }]
-        },
-        {
-          icon: 'code',
-          label: 'Custom',
-          subitems: [{ label: 'Item 1' }]
-        },
-        {
-          icon: 'terminal',
-          label: 'End node'
-        }
-      ]
-    }
+  components: {
+    Sidebar,
+    Board
   },
   mounted() {
     feather.replace()
@@ -105,30 +17,7 @@ export default {
 <template>
   <!-- Dashboard content -->
   <div class="dashboard-container">
-    <div class="sidebar">
-      <!-- Library search -->
-      <div class="sidebar-header">
-        <button class="btn-ghost">
-          <i data-feather="search"></i>
-          <span>Library</span>
-        </button>
-        <div class="inline-flex">
-          <button class="btn-ghost"><i data-feather="chevron-down"></i></button>
-          <button class="btn-ghost"><i data-feather="minimize"></i></button>
-        </div>
-      </div>
-      <!-- Library items -->
-      <ul class="sidebar-menu">
-        <li v-for="item in sidebarItems" :key="item.label">
-          <div class="inline-flex items-center gap-3">
-            <i :data-feather="item.icon"></i>
-            <span> {{ item.label }}</span>
-          </div>
-
-          <i v-if="item.subitems" data-feather="chevron-down"></i>
-        </li>
-      </ul>
-    </div>
+    <Sidebar />
     <!-- Board -->
     <main class="board">
       <div class="board-header">
